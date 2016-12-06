@@ -31,10 +31,14 @@ document.getElementById("displayUser").addEventListener("click", displayUser)
 function displayUser(){
   console.log("user", user)
   //if my user is an idiot, stop them
-  var stuffToDisplay = `<h3>${user.results[0].name.first} ${user.results[0].name.last}</h3>
-                        <img src="${user.results[0].picture.large}">`
+  if(!user) {
+    alert('push the other button first!')
+  } else {
+    var stuffToDisplay = `<h3>${user.results[0].name.first} ${user.results[0].name.last}</h3>
+                          <img src="${user.results[0].picture.large}">`
 
-  document.getElementById("user").innerHTML = stuffToDisplay
+    document.getElementById("user").innerHTML = stuffToDisplay
+  }
 }
 
 
